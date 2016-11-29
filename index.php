@@ -7,7 +7,7 @@
 	layout('views/layout.php');
 
 	dispatch('/','accueil');
-	// dispatch('/promo','promo_choix');
+	dispatch('/promo','promo_choix');
 	// dispatch('/promo/ajout','promo_ajout');
 	// dispatch('/promo/modif','promo_modif');
 	// dispatch('/fichier','fichier_choix');
