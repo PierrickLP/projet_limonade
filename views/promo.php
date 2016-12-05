@@ -1,6 +1,6 @@
 <div classe="container">
     <div class="row">
-        <div class="col s8 offset-s2">
+        <div class="col s10 offset-s1">
             <table class="bordered highlight">
                 <thead>
                 <tr>
