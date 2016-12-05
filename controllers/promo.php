@@ -2,10 +2,10 @@
 
 	function promo_choix(){
 
-        require_once("db_connect.php");
+        require("db_connect.php");
 
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $db_name);
+        $conn = new mysqli($servername, $username, $pswd, $db_name);
 
         // Check connection
         if ($conn->connect_error) {
