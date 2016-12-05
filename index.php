@@ -2,10 +2,11 @@
 
 	require_once('lib/limonade.php');
 
-	dispatch('/accueil','accueil');
-	// dispatch('/promo','promo_choix');
-	// dispatch('/promo/ajout','promo_ajout');
-	// dispatch('/promo/modif','promo_modif');
+	dispatch('/','accueil');
+    dispatch('/promo','promo_choix');
+    dispatch_post('/promo','promo_ajout');
+	dispatch_put('/promo','promo_modif');
+    dispatch_delete('/promo','promo_delete');
 	// dispatch('/fichier','fichier_choix');
 	// dispatch('/fichier/ajout','fichier_ajout');
 	// dispatch('/fichier/modif','fichier_modif');

@@ -1,8 +1,8 @@
 <?php
 
-	// function promo_choix(){
-		// require_once('/controllers/promo/promo_choix.php');
-	// }
+	function promo_choix(){
+        return html('promo.php','layout/layout.php');
+    }
 
 	// function promo_ajout(){
 		// require_once('/controllers/promo/promo_ajout.php');
