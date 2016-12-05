@@ -15,15 +15,50 @@
 
                 <tbody>
                 <tr>
-                    <td>Alvin</td>
+                    <td>AlviAlvinAlvinAlvinAlvinAlvinAlvinAlvinnAlvinAlvinAlvin</td>
                     <td>Eclair</td>
                     <td>EclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclair</td>
                     <td><a href="#!"><i class="material-icons">keyboard_arrow_down</i></a><a href="#!"><i class="material-icons">keyboard_arrow_up</i></a></td>
-                    <td><a href="#!"><i class="material-icons">mode_edit</i></a></td>
+                    <td><a href="#modal_edit"><i class="material-icons">mode_edit</i></a></td>
                     <td><a href="#!"><i class="material-icons">delete</i></a></td>
                 </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+</div>
+
+<div id="modal_edit" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="input-field col s12">
+                <input value="" id="libelle_fichier" type="text" class="validate">
+                <label for="libelle_fichier">Libellé Fichier</label>
+            </div>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choisissez une promo</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Promo</label>
+            </div>
+            <div class="input-field col s12">
+                <div class="file-field">
+                    <div class="btn">
+                        <span>Fichier</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Annuler</a>
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Modifier</a>
     </div>
 </div>
