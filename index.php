@@ -2,7 +2,7 @@
 
 	require_once('lib/limonade.php');
 
-	dispatch('/','accueil');
+	dispatch('/accueil','accueil');
 	// dispatch('/promo','promo_choix');
 	// dispatch('/promo/ajout','promo_ajout');
 	// dispatch('/promo/modif','promo_modif');
