@@ -6,20 +6,20 @@
                 <tr>
                     <th data-field="libelle">Libellé fichier</th>
                     <th data-field="promo">Promo</th>
+                    <th data-field="rang">Rang</th>
                     <th data-field="fichier">Fichier</th>
-                    <th data-field="fichier">Rang</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>AlviAlvinAlvinAlvinAlvinAlvinAlvinAlvinnAlvinAlvinAlvin</td>
-                    <td>Eclair</td>
-                    <td>EclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclair</td>
-                    <td>5</td>
-                    <td><a href="#modal_edit"><i class="material-icons">mode_edit</i></a></td>
+                <tr tag="1">
+                    <td class="field_libelle">AlviAlvinAlvinAlvinAlvinAlvinAlvinAlvinnAlvinAlvinAlvin</td>
+                    <td class="field_promo">Eclair</td>
+                    <td class="field_rang">5</td>
+                    <td class="field_fichier">EclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclair</td>
+                    <td><a href="#" class="edit" tag="1"><i class="material-icons">mode_edit</i></a></td>
                     <td><a href="#!"><i class="material-icons">delete</i></a></td>
                 </tr>
                 </tbody>
@@ -27,6 +27,20 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('.edit').click(function(){
+        var tag_number = $(this).attr('tag');
+        $('#modal_edit #libelle_fichier').val($('tr[tag="'+tag_number+'"] .field_libelle').text());
+        var selected_promo = $('tr[tag="'+tag_number+'"] .field_promo').text();
+        $('#modal_edit #select_promo option[value="3"]').prop('selected', true); // Y U NO WORKIN'
+        $('#modal_edit #rang').val($('tr[tag="'+tag_number+'"] .field_rang').text());
+        $('#modal_edit #file_input').val($('tr[tag="'+tag_number+'"] .field_fichier').text()); // LOOK IF MODIFIED
+
+        $('#modal_edit').modal('open');
+        Materialize.updateTextFields();
+    });
+</script>
 
 <div id="modal_edit" class="modal">
     <div class="modal-content">
@@ -36,10 +50,10 @@
                 <label for="libelle_fichier">Libellé Fichier</label>
             </div>
             <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Choisissez une promo</option>
+                <select id="select_promo">
+                    <option value="" disabled>Choisissez une promo</option>
                     <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
+                    <option value="Eclair">Option 2</option>
                     <option value="3">Option 3</option>
                 </select>
                 <label>Promo</label>
@@ -55,7 +69,7 @@
                         <input type="file">
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
+                        <input class="file-path validate" id="file_input" type="text">
                     </div>
                 </div>
             </div>
