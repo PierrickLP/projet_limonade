@@ -7,7 +7,7 @@
                     <th data-field="libelle">Libellé fichier</th>
                     <th data-field="promo">Promo</th>
                     <th data-field="fichier">Fichier</th>
-                    <th>Déplacer</th>
+                    <th data-field="fichier">Rang</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
@@ -18,7 +18,7 @@
                     <td>AlviAlvinAlvinAlvinAlvinAlvinAlvinAlvinnAlvinAlvinAlvin</td>
                     <td>Eclair</td>
                     <td>EclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclair</td>
-                    <td><a href="#!"><i class="material-icons">keyboard_arrow_down</i></a><a href="#!"><i class="material-icons">keyboard_arrow_up</i></a></td>
+                    <td>5</td>
                     <td><a href="#modal_edit"><i class="material-icons">mode_edit</i></a></td>
                     <td><a href="#!"><i class="material-icons">delete</i></a></td>
                 </tr>
@@ -43,6 +43,10 @@
                     <option value="3">Option 3</option>
                 </select>
                 <label>Promo</label>
+            </div>
+            <div class="input-field col s12">
+                <input value="" id="rang" type="text" class="validate">
+                <label for="rang">Rang</label>
             </div>
             <div class="input-field col s12">
                 <div class="file-field">
