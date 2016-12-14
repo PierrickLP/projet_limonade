@@ -31,13 +31,13 @@
 <script type="text/javascript">
     $('.edit').click(function(){
         var tag_number = $(this).attr('tag');
-        $('#modal_edit #libelle_fichier').val($('tr[tag="'+tag_number+'"] .field_libelle').text());
+        $('#libelle_fichier').val($('tr[tag="'+tag_number+'"] .field_libelle').text());
         var selected_promo = $('tr[tag="'+tag_number+'"] .field_promo').text();
-        $('#modal_edit #select_promo option[value="3"]').prop('selected', true); // Y U NO WORKIN'
-        $('#modal_edit #rang').val($('tr[tag="'+tag_number+'"] .field_rang').text());
-        $('#modal_edit #file_input').val($('tr[tag="'+tag_number+'"] .field_fichier').text()); // LOOK IF MODIFIED
-
+        $('#select_promo option[value="'+selected_promo+'"]').prop('selected', true);
+        $('#rang').val($('tr[tag="'+tag_number+'"] .field_rang').text());
+        $('#file_input').val($('tr[tag="'+tag_number+'"] .field_fichier').text()); // LOOK IF MODIFIED
         $('#modal_edit').modal('open');
+        $('select').material_select();
         Materialize.updateTextFields();
     });
 </script>
@@ -54,7 +54,7 @@
                     <option value="" disabled>Choisissez une promo</option>
                     <option value="1">Option 1</option>
                     <option value="Eclair">Option 2</option>
-                    <option value="3">Option 3</option>
+                    <option value="3" id="blabla">Option 3</option>
                 </select>
                 <label>Promo</label>
             </div>
