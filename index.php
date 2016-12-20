@@ -1,6 +1,10 @@
 <?php
 
 	require_once('lib/limonade.php');
+    foreach (glob("model/*.php") as $filename)
+    {
+        require_once($filename);
+    }
 
 	dispatch('/','accueil');
     dispatch('/promo','promo_choix');
