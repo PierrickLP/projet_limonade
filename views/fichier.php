@@ -20,7 +20,7 @@
                     <td class="field_rang">5</td>
                     <td class="field_fichier">EclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclairEclair</td>
                     <td><a href="#" class="edit" tag="1"><i class="material-icons">mode_edit</i></a></td>
-                    <td><a href="#!"><i class="material-icons">delete</i></a></td>
+                    <td><a href="#" class="delete" tag="1"><i class="material-icons">delete</i></a></td>
                 </tr>
                 </tbody>
             </table>
@@ -35,7 +35,7 @@
         var selected_promo = $('tr[tag="'+tag_number+'"] .field_promo').text();
         $('#select_promo option[value="'+selected_promo+'"]').prop('selected', true);
         $('#rang').val($('tr[tag="'+tag_number+'"] .field_rang').text());
-        $('#file_input').val($('tr[tag="'+tag_number+'"] .field_fichier').text()); // LOOK IF MODIFIED
+        $('#file_input').val($('tr[tag="'+tag_number+'"] .field_fichier').text()); // CHECK IF MODIFIED
         $('#modal_edit').modal('open');
         $('select').material_select();
         Materialize.updateTextFields();

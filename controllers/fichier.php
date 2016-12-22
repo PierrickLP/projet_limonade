@@ -4,10 +4,18 @@
         return html('fichier.php','layout/layout.php');
     }
 
-	// function fichier_ajout(){
-		// require_once('/controllers/fichier/fichier_ajout.php');
-	// }
+    function get_fichier(){
+        return json_encode(Fichier::getAll());
+    }
 
-	// function fichier_modif(){
-		// require_once('/controllers/fichier/fichier_modif.php');
-	// }
+    function fichier_add(){
+        Fichier::add();
+    }
+
+    function fichier_delete(){
+        Fichier::deleteById($_POST['id']);
+    }
+
+    function fichier_edit(){
+        Fichier::update($_POST['id']);
+    }

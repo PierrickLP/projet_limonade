@@ -1,34 +1,21 @@
 <?php
 
 	function promo_choix(){
-
-        require("db_connect.php");
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $pswd, $db_name);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        echo "Connected successfully";
-
-        if($stmt = $conn->prepare("SELECT code_promo, libelle FROM promo")){
-            $stmt->execute();
-            $stmt->bind_result($code_promo, $libelle);
-            while($stmt->fetch()){
-                printf("%s je teste %s/n", $code_promo, $libelle);
-            }
-            $stmt->close();
-        }
-        $mysqli->close();
         return html('promo.php','layout/layout.php');
     }
 
-	// function promo_ajout(){
-		// require_once('/controllers/promo/promo_ajout.php');
-	// }
+    function get_promo(){
+        return json_encode(Promo::getAll());
+    }
 
-	// function promo_modif(){
-		// require_once('/controllers/promo/promo_modif.php');
-	// }
+    function promo_add(){
+        Promo::add($_POST['code_promo'],$_POST['libelle']);
+    }
+
+    function promo_delete(){
+        Promo::deleteById($_POST['id']);
+    }
+
+    function promo_edit(){
+        Promo::update($_POST['id'],$_POST['code_promo'],$_POST['libelle']);
+    }

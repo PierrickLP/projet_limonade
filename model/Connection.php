@@ -17,7 +17,7 @@ class Connection {
     public function query($sql) {
         $sth = $this->dbconnect->prepare($sql);
         $sth->execute(array_slice(func_get_args(),1));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public static function connection(){
