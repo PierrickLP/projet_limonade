@@ -19,17 +19,13 @@
 
 <div id="modal_add" class="modal">
     <div class="modal-content">
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" id="add_code_promo" type="text" class="validate">
-                <label for="modal_code_promo">Code Promo</label>
-            </div>
+        <div class="input-field col s12">
+            <input value="" id="add_code_promo" type="text" class="validate">
+            <label for="add_code_promo">Code Promo</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" id="add_libelle" type="text" class="validate">
-                <label for="modal_libelle">Libellé Promo</label>
-            </div>
+        <div class="input-field col s12">
+            <input value="" id="add_libelle" type="text" class="validate">
+            <label for="add_libelle">Libellé Promo</label>
         </div>
     </div>
     <div class="modal-footer">
@@ -37,25 +33,20 @@
         <a href="#!" id="modal_add_button" class=" modal-action modal-close waves-effect waves-green btn-flat">Ajouter</a>
     </div>
 </div>
+
 <div id="modal_edit" class="modal">
     <div class="modal-content">
-        <div class="row">
-            <div class="input-field col s2">
-                <input disabled value="" class="modal_id" type="text" class="validate">
-                <label for="modal_id">id</label>
-            </div>
+        <div class="input-field col s2">
+            <input disabled value="" class="modal_id" type="text" class="validate">
+            <label for="modal_id">id</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" class="modal_code_promo" type="text" class="validate">
-                <label for="modal_code_promo">Code Promo</label>
-            </div>
+        <div class="input-field col s12">
+            <input value="" class="modal_code_promo" type="text" class="validate">
+            <label for="modal_code_promo">Code Promo</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input value="" class="modal_libelle" type="text" class="validate">
-                <label for="modal_libelle">Libellé Promo</label>
-            </div>
+        <div class="input-field col s12">
+            <input value="" class="modal_libelle" type="text" class="validate">
+            <label for="modal_libelle">Libellé Promo</label>
         </div>
     </div>
     <div class="modal-footer">
@@ -66,23 +57,17 @@
 
 <div id="modal_delete" class="modal">
     <div class="modal-content">
-        <div class="row">
-            <div class="input-field col s2">
-                <input disabled value="" class="modal_id" type="text" class="validate">
-                <label for="modal_id">id</label>
-            </div>
+        <div class="input-field col s2">
+            <input disabled value="" class="modal_id" type="text" class="validate">
+            <label for="modal_id">id</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input disabled value="" class="modal_code_promo" type="text" class="validate">
-                <label for="modal_code_promo">Code Promo</label>
-            </div>
+        <div class="input-field col s12">
+            <input disabled value="" class="modal_code_promo" type="text" class="validate">
+            <label for="modal_code_promo">Code Promo</label>
         </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input disabled value="" class="modal_libelle" type="text" class="validate">
-                <label for="modal_libelle">Libellé Promo</label>
-            </div>
+        <div class="input-field col s12">
+            <input disabled value="" class="modal_libelle" type="text" class="validate">
+            <label for="modal_libelle">Libellé Promo</label>
         </div>
         <p>Voulez-vous vraiment supprimer cette promo ?</p>
     </div>
@@ -98,13 +83,11 @@
         $('.modal_id').val(row.find('.id').text());
         $('.modal_code_promo').val(row.find('.code_promo').text());
         $('.modal_libelle').val(row.find('.libelle').text());
-        $('select').material_select();
         Materialize.updateTextFields();
     }
     function modal_edit(caller){
         modal_popu(caller);
         $('#modal_edit').modal('open');
-
     }
     function modal_delete(caller){
         modal_popu(caller);

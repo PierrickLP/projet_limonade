@@ -11,7 +11,8 @@ class Connection {
 
 
     public function __construct() {
-        $this->dbconnect = new PDO('mysql:dbname='.$this->db.';host='.$this->host, $this->user, $this->pass);
+        $this->dbconnect = new PDO('mysql:dbname='.$this->db.';host='.$this->host, $this->user, $this->pass,
+            array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     }
 
     public function query($sql) {
