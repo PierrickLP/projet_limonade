@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col s10 offset-s1">
             <a href="#modal_add" class="waves-effect waves-light btn">Ajouter promo</a>
-            <table class="bordered highlight">
+            <table width="100%" class="bordered highlight">
                 <thead>
                 <tr>
                     <th>id</th>

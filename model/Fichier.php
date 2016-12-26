@@ -10,7 +10,7 @@ class Fichier{
 
     public static function getAll() { return Connection::connection()->query('SELECT * FROM `'.Fichier::$table.'`'); }
     public static function getById($id) { return Connection::connection()->query('SELECT * FROM `'.Fichier::$table.'` WHERE id = ?',$id); }
-    public static function deleteById($id) { Connection::connection()->query('DELETE FROM `'.Fichier::$table.'` WHERE id = ?',$id);}
+    public static function deleteById($id) {Connection::connection()->query('DELETE FROM `'.Fichier::$table.'` WHERE id = ?',$id);}
 
     public static function add($rang, $promo, $libelle, $fichier){
         Connection::connection()->query('INSERT INTO `'.Fichier::$table.'`(id, rang, promo, libelle, fichier) VALUES(?,?,?,?,?)',NULL,$rang, $promo, $libelle, $fichier);
@@ -18,5 +18,9 @@ class Fichier{
 
     public static function update($id, $rang, $promo, $libelle, $fichier){
         Connection::connection()->query('UPDATE `'.Fichier::$table.'` SET rang = ?, promo = ?, libelle = ?, fichier = ? WHERE id = ?',$rang, $promo, $libelle, $fichier, $id);
+    }
+
+    public static function countFileNumberById($id){
+        return Connection::connection()->query('SELECT count(1) count FROM `'.Fichier::$table.'` WHERE fichier = (SELECT fichier FROM `'.Fichier::$table.'` WHERE id = ?)',$id);
     }
 }

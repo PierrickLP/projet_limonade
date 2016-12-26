@@ -1,10 +1,13 @@
 <?php
 
 	require_once('lib/limonade.php');
+    require_once('parameters.php');
     foreach (glob("model/*.php") as $filename)
     {
         require_once($filename);
     }
+
+    $path = '../appli_documents_rentree';
 
 	dispatch('/','accueil');
 

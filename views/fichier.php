@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col s10 offset-s1">
             <a id="open_modal_add_button" class="waves-effect waves-light btn">Ajouter fichier</a>
-            <table class="bordered highlight">
+            <table width="100%" class="bordered highlight">
                 <thead>
                 <tr>
                     <th>id</th>
@@ -24,7 +24,7 @@
     <div class="modal-content">
         <div class="input-field col s12">
             <select id="add_promo">
-                <option value="" disabled selected>Choisissez une promo</option>
+                <option value=" " selected>Choisissez une promo</option>
             </select>
             <label>Promo</label>
         </div>
@@ -58,12 +58,12 @@
 <div id="modal_edit" class="modal">
     <div class="modal-content">
         <div class="input-field col s2">
-            <input disabled value="" class="modal_id" type="text" class="validate">
+            <input disabled value=" " class="modal_id" type="text" class="validate">
             <label for="modal_id">id</label>
         </div>
         <div class="input-field col s12">
             <select id="modal_promo_edit">
-                <option value="" disabled>Choisissez une promo</option>
+                <option value="" >Choisissez une promo</option>
             </select>
             <label>Promo</label>
         </div>
@@ -79,7 +79,7 @@
             <div class="file-field">
                 <div class="btn">
                     <span>Fichier</span>
-                    <input class="modal_file_input" type="file">
+                    <input id="edit_file_input" type="file">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate modal_file_name" type="text">
@@ -115,10 +115,6 @@
         </div>
         <div class="input-field col s12">
             <div class="file-field">
-                <div class="btn">
-                    <span>Fichier</span>
-                    <input disabled class="modal_file_input" type="file">
-                </div>
                 <div class="file-path-wrapper">
                     <input disabled class="file-path validate modal_file_name" type="text">
                 </div>
@@ -159,23 +155,53 @@
 
     $('#modal_add_button').click(function(){
         var promo = $('#add_promo').val();
-        $('#add_promo').val('');
+        $('#add_promo').find('option[value=" "]').prop('selected',true);
         var rang = $('#add_rang').val();
         $('#add_rang').val('');
         var libelle_fichier = $('#add_libelle_fichier').val();
-        $('#add_file_name').val('');
+        $('#add_libelle_fichier').val('');
         var file_input = $('#add_file_input').prop('files')[0];
-        //$.post( "/fichier", {promo: promo, rang: rang, libelle_fichier: libelle_fichier, file_input: file_input});
-        Materialize.updateTextFields();
-        table.ajax.reload();
+        var fd = new FormData();
+        fd.append('promo', promo);
+        fd.append('rang', rang);
+        fd.append('libelle_fichier', libelle_fichier);
+        fd.append( 'file', file_input );
+        $.ajax({
+            url: '/fichier',
+            data: fd,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(){
+                table.ajax.reload();
+                Materialize.updateTextFields();
+            }
+        });
+
     });
     $('#modal_edit_button').click(function(){
         var id = $('#modal_edit .modal_id').val();
         var promo = $('#modal_promo_edit').val();
         var rang = $('.modal_rang').val();
         var libelle_fichier = $('.modal_libelle_fichier').val();
-        $.post( "/fichier", { id: id, promo: promo, rang: rang, libelle_fichier: libelle_fichier,  _method: "PUT" });
-        table.ajax.reload();
+        var file_input = $('#edit_file_input').prop('files')[0];
+        var fd = new FormData();
+        fd.append('id', id);
+        fd.append('promo', promo);
+        fd.append('rang', rang);
+        fd.append('libelle_fichier', libelle_fichier);
+        fd.append( 'file', file_input );
+        fd.append('_method', 'PUT');
+        $.ajax({
+            url: '/fichier',
+            data: fd,
+            processData: false,
+            contentType: false,
+            type: 'POST',
+            success: function(){
+                table.ajax.reload();
+            }
+        });
 
     });
     $('#modal_delete_button').click(function(){
