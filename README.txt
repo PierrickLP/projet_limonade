@@ -19,7 +19,9 @@ l'application de rentrée de l'ISEN dans le fichier "config.php".
 4) Après avoir modifier le fichier "rentree--config.php" selon les modalités d'installation de l'application de rentrée
 de l'ISEN, supprimez le fichier "config.php" de l'application de rentrée de l'ISEN, déplacez le fichier
 "rentree--config.php" jusqu'à la racine de l'application de rentrée de l'ISEN puis renommez le "config.php".
-5) Accédez à l'application en utilisant le paramétrage de votre serveur.
+5) Configurez votre serveur afin de permettre à cette application de modifier les fichiers présent dans le dossier
+contenant les documents de l'application de rentrée de l'ISEN.
+6) Accédez à l'application en utilisant le paramétrage de votre serveur.
 
 
 
