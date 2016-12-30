@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Backend</title>
+		<title>Administration rentree</title>
 
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -29,7 +29,7 @@
 		
 		<nav>
 			<div class="nav-wrapper">
-				<a href="/" class="brand-logo">Logo</a>
+				<a href="/" class="brand-logo">Administration rentree</a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="/promo">Promos</a></li>
 					<li><a href="/fichier">Fichiers</a></li>

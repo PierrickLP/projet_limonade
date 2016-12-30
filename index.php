@@ -1,7 +1,7 @@
 <?php
 
 	require_once('lib/limonade.php');
-    require_once('parameters.php');
+    require_once('config.php');
     foreach (glob("model/*.php") as $filename)
     {
         require_once($filename);
