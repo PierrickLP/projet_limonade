@@ -31,7 +31,7 @@
     }
 
     function fichier_edit(){
-        if (!str_cmp($_FILES['file']['name'], '')) {
+        if (strcmp($_FILES['file']['name'], '') != 0) {
             $file_prefix = '';
             $promo = $_POST['promo'];
             if (strpos($promo, 'A1') !== false || strpos($promo, 'A2') !== false) {
