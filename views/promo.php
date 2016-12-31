@@ -98,7 +98,7 @@
         $('#add_code_promo').val('');
         var libelle = $('#add_libelle').val();
         $('#add_libelle').val('');
-        $.post( "/promo", {code_promo: code_promo, libelle: libelle});
+        $.post( "./promo", {code_promo: code_promo, libelle: libelle});
         Materialize.updateTextFields();
         table.ajax.reload();
     });
@@ -106,20 +106,20 @@
         var id = $('#modal_edit .modal_id').val();
         var code_promo = $('#modal_edit .modal_code_promo').val();
         var libelle = $('#modal_edit .modal_libelle').val();
-        $.post( "/promo", { id: id, code_promo: code_promo, libelle: libelle,  _method: "PUT" });
+        $.post( "./promo", { id: id, code_promo: code_promo, libelle: libelle,  _method: "PUT" });
         table.ajax.reload();
 
     });
     $('#modal_delete_button').click(function(){
         var id = $('#modal_delete .modal_id').val();
-        $.post( "/promo", { id: id, _method: "DELETE" });
+        $.post( "./promo", { id: id, _method: "DELETE" });
         table.ajax.reload();
     });
     $(document).ready(function() {
         table = $('table').DataTable( {
 
             "ajax": {
-                "url": "/get/promo",
+                "url": "./get/promo",
                 "dataSrc": ""
             },
             "columns": [

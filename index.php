@@ -7,8 +7,6 @@
         require_once($filename);
     }
 
-    $path = '../appli_documents_rentree';
-
 	dispatch('/','accueil');
 
     dispatch('/promo','promo_choix');

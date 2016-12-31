@@ -167,7 +167,7 @@
         fd.append('libelle_fichier', libelle_fichier);
         fd.append( 'file', file_input );
         $.ajax({
-            url: '/fichier',
+            url: './fichier',
             data: fd,
             processData: false,
             contentType: false,
@@ -193,7 +193,7 @@
         fd.append( 'file', file_input );
         fd.append('_method', 'PUT');
         $.ajax({
-            url: '/fichier',
+            url: './fichier',
             data: fd,
             processData: false,
             contentType: false,
@@ -206,13 +206,13 @@
     });
     $('#modal_delete_button').click(function(){
         var id = $('#modal_delete .modal_id').val();
-        $.post( "/fichier", { id: id, _method: "DELETE" });
+        $.post( "./fichier", { id: id, _method: "DELETE" });
         table.ajax.reload();
     });
 
     $(document).ready(function() {
 
-        $.getJSON("get/promo", function(tabPromos) {
+        $.getJSON("./get/promo", function(tabPromos) {
             $.each(tabPromos, function(key, promo) {
                 $("#add_promo").append("<option value="+promo['code_promo']+">"+promo['code_promo']+"</option>");
                 $("#modal_promo_edit").append("<option value="+promo['code_promo']+">"+promo['code_promo']+"</option>");
@@ -224,7 +224,7 @@
         table = $('table').DataTable( {
 
             "ajax": {
-                "url": "/get/fichier",
+                "url": "./get/fichier",
                 "dataSrc": ""
             },
             "columns": [
