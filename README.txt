@@ -10,7 +10,8 @@ promos et des documents.
 INSTALLATION
 ---------------
 
-NOTA BENE : Cette application doit être installée APRES avoir installé l'application de rentrée de l'ISEN.
+NOTA BENE : Cette application doit être installée APRES avoir installé l'application de rentrée de l'ISEN. Assurez-vous
+donc que l'application de rentrée de l'ISEN soit fonctionnelle avant l'installation de cette application.
 
 Fonctionnel sur un serveur apache utilisant php-5.6.18 et mysql-5.7.11.
 
@@ -25,6 +26,8 @@ de l'ISEN, supprimez le fichier "config.php" de l'application de rentrée de l'I
 5) Configurez votre serveur afin de permettre à cette application de modifier les fichiers présent dans le dossier
 contenant les documents de l'application de rentrée de l'ISEN.
 6) Accédez à l'application en utilisant le paramétrage de votre serveur.
+
+PS : Les deux applications doivent bien évidemment utiliser la même base de donnée.
 
 
 
