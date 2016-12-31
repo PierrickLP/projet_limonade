@@ -21,7 +21,7 @@
   $query = "SELECT libelle, code_promo FROM promo";
   $result = mysql_query($query);
   $libellePromo = array();
-  while($data = mysql_fetch_array($result)){
+  while($data = mysql_fetch_array( $result)){
 	  $libellePromo[$data['libelle']]=$data['code_promo'];
   }
   
