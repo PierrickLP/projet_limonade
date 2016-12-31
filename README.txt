@@ -12,6 +12,9 @@ INSTALLATION
 
 NOTA BENE : Cette application doit être installée APRES avoir installé l'application de rentrée de l'ISEN.
 
+Fonctionnel sur un serveur apache utilisant php-5.6.18 et mysql-5.7.11.
+
+
 1) Déployez l'application sur votre serveur, de préférence dans le même dossier que l'application de rentrée de l'ISEN.
 2) Utilisez le fichier "doc_rentree.sql" afin de créer une base de données permettant d'utiliser l'application.
 3) Renseignez les informations de connexion à la base de donnée et le chemin jusqu'au dossier contenant les documents de
